@@ -12,6 +12,7 @@ option('disp_currency_fmt', '%.02f', 'default fmtstr to format for currency valu
 option('disp_float_fmt', '{:.02f}', 'default fmtstr to format for float values', replay=True)
 option('disp_int_fmt', '{:.0f}', 'default fmtstr to format for int values', replay=True)
 option('disp_date_fmt','%Y-%m-%d', 'default fmtstr to strftime for date values', replay=True)
+option('disp_bool_fmt', '%r', 'default fmtstr to format bool values', replay=True)
 
 try:
     import dateutil.parser
@@ -73,6 +74,7 @@ vdtype(int, '#')
 vdtype(float, '%')
 vdtype(dict, '')
 vdtype(list, '')
+vdtype(bool, '')
 
 def isNumeric(col):
     return col.type in (int,vlen,float,currency,date)
